@@ -18,3 +18,7 @@ Then run audio_train.py. The script first tries to perfectly align the samples a
 Some settings can be configured in audio_config.py.
 
 The LSTM runs in stateful-mode, so it should work even well with small chunks of data.
+
+#### Not Convinced?
+
+When you are sceptical about the results, please take this idea as a starting point and make it better ;)
