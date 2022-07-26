@@ -6,7 +6,7 @@ Run audio_predict.py and find your delossified files in /audio/out
 
 I use this together with my digital audio workstation (DAW), so all wav-files are supposed to be 32-bit floating point (for the input, it was converted from the compressed audio).
 
-# Training
+## Training
 
 This repository comes with pre-trained models and can convert files without training.
 
