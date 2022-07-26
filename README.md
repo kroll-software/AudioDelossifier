@@ -1,5 +1,5 @@
 # Audio Delossifier
-Delossify compressed audio (mp3 and others)
+Delossify compressed audio (mp3 and others) with Python and Tensorflow.
 
 Copy your 32-bit floating point *.wav files to the /audio folder.
 Run audio_predict.py and find your delossified files in /audio/out
