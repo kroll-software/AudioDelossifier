@@ -11,8 +11,7 @@ It is unclear whether this always succeeds. Perhaps you can use this project as 
 
 This code was developed with Python 3.12.7.
 
-Beside the python packages in requirements.txt you also need ffmpeg
-On linux: 'apt-get install ffmpeg'
+Beside the python packages in requirements.txt you also need ffmpeg (on linux: 'apt-get install ffmpeg')
 
 To install Tensorflow with GPU-support, please follow the instructions from the tensorflow website.
 
