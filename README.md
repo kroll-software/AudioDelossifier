@@ -1,24 +1,41 @@
 # Audio Delossifier
+
 Delossify compressed audio (mp3 and others) with Python and Tensorflow.
 
-Copy your 32-bit floating point *.wav files to the /audio folder.
-Run audio_predict.py and find your delossified files in /audio/out
+This repository attempts to improve the audio quality of lossy compression such as MP3.
 
-I use this together with my digital audio workstation (DAW), so all wav-files are supposed to be 32-bit floating point (for the input, it was converted from the compressed audio).
+It is unclear whether this always succeeds. Perhaps you can use this project as a starting point for your own developments or improvements.
+
+
+## Installation
+
+This code was developed with Python 3.12.7.
+
+Beside the python packages in requirements.txt you also need ffmpeg
+On linux: 'apt-get install ffmpeg'
+
+To install Tensorflow with GPU-support, please follow the instructions from the tensorflow website.
+
+It is recommended to use a virtual environment such as venv or conda.
+
 
 ## Training
 
-This repository comes with pre-trained models and can convert files without training.
+1. Copy some uncompressed audio files (*.wav or *.flac) to the /training-data/uncompressed folder
+2. Set the Mp3BitRate and other configurations in audio_config.py
+3. Run audio-train.py
 
-To train a model, copy compressed audio as 32-bit floating point *.wav files to the /training-data/compressed folder.
-Also copy the uncompressed versions with the same file names to the /training-data/uncompressed folder.
+This repository comes with pre-trained models for some typical mp3-bitrates.
 
-Then run audio_train.py. The script first tries to perfectly align the samples and caches the resultig files in /aligned-data. This might fail, when the files are stretched for some reason and can't be aligned.
 
-Some settings can be configured in audio_config.py.
+## Inference (delossify files)
 
-The LSTM runs in stateful-mode, so it should work even well with small chunks of data.
+1. Copy some compressed audio files (*.mp3 or *.wav) to the /audio folder
+2. Set the OUTPUTFORMAT to 'FLAC' or 'WAV' in audio_config.py
+3. Run audio_predict.py
+4. The delossified files can be found in the /audio/out folder
 
-#### Not Convinced?
 
-When you are sceptical about the results, please take this idea as a starting point and make it better ;)
+### To-Do
+
+Better analysis and benchmarks. We currently use MSE to compare the results, however for higher bitrates the MSE between compressed and uncompressed audio is already very low and might be below the accuracy of the ML computations.
