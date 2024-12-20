@@ -23,7 +23,8 @@ It is recommended to use a virtual environment such as venv or conda.
 
 1. Copy some uncompressed audio files (*.wav or *.flac) to the /training-data/uncompressed folder
 2. Set the Mp3BitRate and other configurations in audio_config.py
-3. Run audio-train.py
+3. Delete the corresponding weights-file in /models when you want to train from scratch
+4. Run audio-train.py
 
 This repository comes with pre-trained models for some typical mp3-bitrates.
 
