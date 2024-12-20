@@ -19,7 +19,7 @@ Mp3BitRate = '192k'
 DATAPATH = './training-data/'
 
 BatchSize = 32  #decrease when you run out-of-memory (OOM)
-LearningRate = 1e-5 #default is 1e-3, we have a scheduler
+LearningRate = 1e-3 #default is 1e-3, we have a scheduler
 Epochs = 50
 
 # model parameters
